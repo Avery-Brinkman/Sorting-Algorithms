@@ -1,20 +1,92 @@
-// Sorting-Algorithms.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+#include <iomanip>
+
+using namespace std;
+
+void printArray(int numbers[10])
+{
+    for (int i = 0; i < 10; i++)
+    {
+        cout << setw(4) << numbers[i];
+    }
+    cout << endl;
+}
+
+void bubbleSort(int numbers[10])
+{
+    for (int n = 9; n > 0; n--)
+    {
+        int tempVal, currMax;
+        currMax = 0;
+        for (int i = 0; i <= n; i++)
+        {
+            if (numbers[i] > numbers[currMax])
+            {
+                currMax = i;
+            }
+        }
+        tempVal = numbers[n];
+        numbers[n] = numbers[currMax];
+        numbers[currMax] = tempVal;
+    }
+}
+void bubbleSortStep(int numbers[10])
+{
+    for (int n = 9; n > 0; n--)
+    {
+        int tempVal, currMax;
+        currMax = 0;
+        for (int i = 0; i <= n; i++)
+        {
+            if (numbers[i] > numbers[currMax])
+            {
+                currMax = i;
+            }
+        }
+        tempVal = numbers[n];
+        numbers[n] = numbers[currMax];
+        numbers[currMax] = tempVal;
+        printArray(numbers);
+        cout << setw((n + 1) * 4) << setfill(' ');
+        cout << "^" << endl;
+        _getch();
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    srand(time(NULL));
+
+    int numbers[10];
+    char res;
+
+    cout << "Random list? (y/n)" << endl;
+    cin >> res;
+
+    if (res == 'n' || res == 'N')
+    {
+        for (unsigned int i = 0; i < (sizeof(numbers) / sizeof(numbers[0])); i++)
+        {
+            cout << i << ": ";
+            cin >> numbers[i];
+        }
+    }
+    else
+    {
+        for (unsigned int i = 0; i < (sizeof(numbers) / sizeof(numbers[0])); i++)
+        {
+            numbers[i] = rand() % 100 + 1;
+        }
+    }
+
+    printArray(numbers);
+    cout << "----------------------------------------" << endl;
+    bubbleSortStep(numbers);
+    cout << "----------------------------------------" << endl;
+    cout << "DONE: " << endl;
+    printArray(numbers);
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
