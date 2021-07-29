@@ -1,0 +1,16 @@
+Objectives
+- Write the sorting algorithms
+- Be able to take in any type (probably just as long as it's iterable, but IDK yet)
+- Add visualization (prob with graphics.h, or overkill w/ OpenGL)
+
+Types
+- Bubble https://youtu.be/aXXWXz5rF64
+- Selection
+- Insertion
+- Quick https://youtu.be/aXXWXz5rF64
+- Merge
+- Heap
+- Radix?
+
+
+https://youtube.com/playlist?list=PL2aHrV9pFqNS79ZKnGLw-RG5gH01bcjRZ
