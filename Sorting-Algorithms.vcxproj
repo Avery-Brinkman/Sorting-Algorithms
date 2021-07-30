@@ -139,10 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="Sorting-Algorithms.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BubbleSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

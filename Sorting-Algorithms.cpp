@@ -1,66 +1,20 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-#include <conio.h>
 #include <iomanip>
+
+#include "BubbleSort.h"
 
 using namespace std;
 
-void printArray(int numbers[10])
-{
-    for (int i = 0; i < 10; i++)
-    {
-        cout << setw(4) << numbers[i];
-    }
-    cout << endl;
-}
-
-void bubbleSort(int numbers[10])
-{
-    for (int n = 9; n > 0; n--)
-    {
-        int tempVal, currMax;
-        currMax = 0;
-        for (int i = 0; i <= n; i++)
-        {
-            if (numbers[i] > numbers[currMax])
-            {
-                currMax = i;
-            }
-        }
-        tempVal = numbers[n];
-        numbers[n] = numbers[currMax];
-        numbers[currMax] = tempVal;
-    }
-}
-void bubbleSortStep(int numbers[10])
-{
-    for (int n = 9; n > 0; n--)
-    {
-        int tempVal, currMax;
-        currMax = 0;
-        for (int i = 0; i <= n; i++)
-        {
-            if (numbers[i] > numbers[currMax])
-            {
-                currMax = i;
-            }
-        }
-        tempVal = numbers[n];
-        numbers[n] = numbers[currMax];
-        numbers[currMax] = tempVal;
-        printArray(numbers);
-        cout << setw((n + 1) * 4) << setfill(' ');
-        cout << "^" << endl;
-        _getch();
-    }
-}
-
 int main()
 {
+    const int ARRAY_SIZE = 10;
+
     srand(time(NULL));
 
-    int numbers[10];
+    int numbers[ARRAY_SIZE];
+    cout << (sizeof(numbers) / sizeof(numbers[0])) << endl;
     char res;
 
     cout << "Random list? (y/n)" << endl;
@@ -68,7 +22,7 @@ int main()
 
     if (res == 'n' || res == 'N')
     {
-        for (unsigned int i = 0; i < (sizeof(numbers) / sizeof(numbers[0])); i++)
+        for (int i = 0; i < ARRAY_SIZE; i++)
         {
             cout << i << ": ";
             cin >> numbers[i];
@@ -76,17 +30,17 @@ int main()
     }
     else
     {
-        for (unsigned int i = 0; i < (sizeof(numbers) / sizeof(numbers[0])); i++)
+        for (int i = 0; i < ARRAY_SIZE; i++)
         {
             numbers[i] = rand() % 100 + 1;
         }
     }
 
-    printArray(numbers);
+    printArray(numbers, ARRAY_SIZE);
     cout << "----------------------------------------" << endl;
-    bubbleSortStep(numbers);
+    BubbleSort(numbers, ARRAY_SIZE, true);
     cout << "----------------------------------------" << endl;
     cout << "DONE: " << endl;
-    printArray(numbers);
+    printArray(numbers, ARRAY_SIZE);
 }
 
