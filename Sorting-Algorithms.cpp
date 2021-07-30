@@ -1,9 +1,10 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-#include <iomanip>
 
+#include "MiscFuncs.h"
 #include "BubbleSort.h"
+#include "SelectionSort.h"
 
 using namespace std;
 
@@ -15,30 +16,17 @@ int main()
 
     int numbers[ARRAY_SIZE];
     cout << (sizeof(numbers) / sizeof(numbers[0])) << endl;
-    char res;
 
-    cout << "Random list? (y/n)" << endl;
-    cin >> res;
 
-    if (res == 'n' || res == 'N')
+    for (int i = 0; i < ARRAY_SIZE; i++)
     {
-        for (int i = 0; i < ARRAY_SIZE; i++)
-        {
-            cout << i << ": ";
-            cin >> numbers[i];
-        }
+        numbers[i] = rand() % 100 + 1;
     }
-    else
-    {
-        for (int i = 0; i < ARRAY_SIZE; i++)
-        {
-            numbers[i] = rand() % 100 + 1;
-        }
-    }
+ 
 
     printArray(numbers, ARRAY_SIZE);
     cout << "----------------------------------------" << endl;
-    BubbleSort(numbers, ARRAY_SIZE, true);
+    SelectionSort(numbers, ARRAY_SIZE, true);
     cout << "----------------------------------------" << endl;
     cout << "DONE: " << endl;
     printArray(numbers, ARRAY_SIZE);

@@ -4,8 +4,8 @@ Objectives
 - Add visualization (prob with graphics.h, or overkill w/ OpenGL)
 
 Types
-- Bubble https://youtu.be/aXXWXz5rF64
-- Selection
+- Bubble https://youtu.be/aXXWXz5rF64 -
+- Selection -
 - Insertion
 - Quick https://youtu.be/aXXWXz5rF64
 - Merge
