@@ -34,5 +34,8 @@
     <ClInclude Include="MiscFuncs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InsertionSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

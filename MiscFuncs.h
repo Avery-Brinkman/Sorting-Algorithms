@@ -9,7 +9,7 @@ void printArray(int numbers[], int ARRAY_SIZE)
 {
 	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
-		cout << setw(4) << numbers[i];
+		cout << setw(4) << setfill(' ') << numbers[i];
 	}
 	cout << endl;
 }

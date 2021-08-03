@@ -5,6 +5,7 @@
 #include "MiscFuncs.h"
 #include "BubbleSort.h"
 #include "SelectionSort.h"
+#include "InsertionSort.h"
 
 using namespace std;
 
@@ -15,8 +16,6 @@ int main()
     srand(time(NULL));
 
     int numbers[ARRAY_SIZE];
-    cout << (sizeof(numbers) / sizeof(numbers[0])) << endl;
-
 
     for (int i = 0; i < ARRAY_SIZE; i++)
     {
@@ -26,7 +25,7 @@ int main()
 
     printArray(numbers, ARRAY_SIZE);
     cout << "----------------------------------------" << endl;
-    SelectionSort(numbers, ARRAY_SIZE, true);
+    InsertionSort(numbers, ARRAY_SIZE, true);
     cout << "----------------------------------------" << endl;
     cout << "DONE: " << endl;
     printArray(numbers, ARRAY_SIZE);
