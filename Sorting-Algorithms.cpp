@@ -27,11 +27,11 @@ int main()
  
 
     //printArray(numbers, ARRAY_SIZE);
-    printVect(numbers, ARRAY_SIZE);
+    PrintVect(numbers, ARRAY_SIZE);
     cout << "----------------------------------------" << endl;
-    QuickSort(numbers);
+    QuickSort(numbers, true);
     cout << "----------------------------------------" << endl;
     cout << "DONE: " << endl;
-    printVect(numbers, ARRAY_SIZE);
+    PrintVect(numbers, ARRAY_SIZE);
  }
 

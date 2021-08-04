@@ -14,51 +14,82 @@ void QuickSortStartEnd(vector<int> &numbers, int startInd, int endInd)
 
 	int pivotIndex = startInd;
 	int storeIndex = pivotIndex + 1;
+
 	for (int i = storeIndex; i < endInd; i++)
 	{
 		if (numbers[i] < numbers[pivotIndex])
 		{
-			swapIndVect(numbers, i, storeIndex);
+			SwapIndVect(numbers, i, storeIndex);
 			storeIndex++;
 		}
 	}
-	swapIndVect(numbers, pivotIndex, storeIndex - 1);
+
+	SwapIndVect(numbers, pivotIndex, storeIndex - 1);
 
 	QuickSortStartEnd(numbers, pivotIndex, storeIndex - 1);
 	QuickSortStartEnd(numbers, storeIndex, endInd);
 }
 
-void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd)
+void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vector<bool> &tracker)
 {
 	if (endInd - startInd <= 1)
+	{
+		if (startInd >= 0 && startInd < numbers.size() && endInd < numbers.size())
+			tracker[startInd] = true;
+
+		if (startInd == endInd)
+			cout << "There is nothing here to sort, ";
+		else
+			cout << "This is the only place that this number can be, ";
+		cout << "so it's already sorted!" << endl;
+
+ 		_getch();
 		return;
+	}
 
 	int pivotIndex = startInd;
 	int storeIndex = pivotIndex + 1;
+
 	for (int i = storeIndex; i < endInd; i++)
 	{
 		if (numbers[i] < numbers[pivotIndex])
 		{
- 			swapIndVect(numbers, i, storeIndex);
+ 			SwapIndVect(numbers, i, storeIndex);
 			storeIndex++;
 		}
 	}
-	swapIndVect(numbers, pivotIndex, storeIndex - 1);
 
-	printVect(numbers, numbers.size());
-	cout << setw((storeIndex) * 4) << setfill(' ') << "^" << endl;
+	SwapIndVect(numbers, pivotIndex, storeIndex - 1);
+
+	tracker[storeIndex - 1] = true;
+
+	PrintVect(numbers);
+	PrintTracker(tracker);
 	_getch();
 
-	QuickSortStartEndStep(numbers, pivotIndex, storeIndex - 1);
-	QuickSortStartEndStep(numbers, storeIndex, endInd);
+	cout << "Sorted the " << numbers[pivotIndex] << " on the left of " << numbers[storeIndex - 1] << "." << endl;
+	QuickSortStartEndStep(numbers, pivotIndex, storeIndex - 1, tracker);
+
+	cout << "Sorted the ";
+	if (storeIndex == endInd)
+		cout << numbers[storeIndex - 1];
+	else
+		cout << numbers[storeIndex];
+	cout << " on the right of " << numbers[storeIndex - 1] << "." << endl;
+	QuickSortStartEndStep(numbers, storeIndex, endInd, tracker);
 }
 
-void QuickSort(vector<int> &numbers, bool step = false)
+void QuickSort(vector<int>& numbers, bool step = false)
 {
 	if (step)
 	{
-		//int tracker[ARRAY_SIZE];
-		QuickSortStartEndStep(numbers, 0, numbers.size());
+		vector<bool> tracker;
+		tracker.assign(numbers.size(), false);
+		cout << "Sorting " << numbers[0] << endl;
+		QuickSortStartEndStep(numbers, 0, numbers.size(), tracker);
 	}
-	QuickSortStartEnd(numbers, 0, numbers.size());
+	else
+	{
+		QuickSortStartEnd(numbers, 0, numbers.size());
+	}
 }

@@ -14,9 +14,10 @@ void printArray(int numbers[], int ARRAY_SIZE)
 	}
 	cout << endl;
 }
-void printVect(vector<int>numbers, int ARRAY_SIZE)
+
+void PrintVect(vector<int>numbers)
 {
-	for (int i = 0; i < ARRAY_SIZE; i++)
+	for (int i = 0; i < numbers.size(); i++)
 	{
 		cout << setw(4) << setfill(' ') << numbers[i];
 	}
@@ -32,11 +33,23 @@ void swapInd(int numbers[], int indexA, int indexB)
 	numbers[indexA] = temp;
 }
 
-void swapIndVect(vector<int> &numbers, int indexA, int indexB)
+void SwapIndVect(vector<int> &numbers, int indexA, int indexB)
 {
 	if (indexA == indexB)
 		return;
 	int temp = numbers[indexB];
 	numbers[indexB] = numbers[indexA];
 	numbers[indexA] = temp;
+}
+
+void PrintTracker(vector<bool> tracker)
+{
+	for (int i = 0; i < tracker.size(); i++)
+	{
+		if (tracker[i])
+			cout << "    ";
+		else
+			cout << "----";
+	}
+	cout << endl;
 }
