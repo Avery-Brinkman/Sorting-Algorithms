@@ -148,6 +148,7 @@
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="MiscFuncs.h" />
+    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="SelectionSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

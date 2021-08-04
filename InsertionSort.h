@@ -25,9 +25,10 @@ void InsertionSort(int numbers[], int ARRAY_SIZE, bool step = false)
 			{
 				if (step)
 					cout << "Swap!" << endl;
-				int tempVal = numbers[currentIndex - 1];
-				numbers[currentIndex - 1] = numbers[currentIndex];
-				numbers[currentIndex] = tempVal;
+				swapInd(numbers, currentIndex - 1, currentIndex);
+				//int tempVal = numbers[currentIndex - 1];
+				//numbers[currentIndex - 1] = numbers[currentIndex];
+				//numbers[currentIndex] = tempVal;
 			}
 			else
 			{

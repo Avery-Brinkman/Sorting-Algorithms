@@ -6,7 +6,7 @@ Objectives
 Types
 - Bubble https://youtu.be/aXXWXz5rF64 -
 - Selection -
-- Insertion
+- Insertion - 
 - Quick https://youtu.be/aXXWXz5rF64
 - Merge
 - Heap
