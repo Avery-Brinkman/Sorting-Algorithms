@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <conio.h>
+#include <vector>
 
 #include "MiscFuncs.h"
 
@@ -42,6 +43,10 @@ void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vecto
 		else
 			cout << "This is the only place that this number can be, ";
 		cout << "so it's already sorted!" << endl;
+			
+		PrintVect(numbers);
+		PrintTracker(tracker); 
+		cout << endl;
 
  		_getch();
 		return;
@@ -65,6 +70,7 @@ void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vecto
 
 	PrintVect(numbers);
 	PrintTracker(tracker);
+	cout << endl;
 	_getch();
 
 	cout << "Sorted the " << numbers[pivotIndex] << " on the left of " << numbers[storeIndex - 1] << "." << endl;
@@ -79,8 +85,21 @@ void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vecto
 	QuickSortStartEndStep(numbers, storeIndex, endInd, tracker);
 }
 
-void QuickSort(vector<int>& numbers, bool step = false)
+void QuickSort(vector<int>& numbers, bool step = true)
 {
+	cout << "QUICK SORT" << endl << endl;
+
+	cout << "KEY:" << endl;
+	cout << "    What was just sorted." << endl;
+	cout << "    Current version of the vector." << endl;
+	cout << "    ---- indicator for the portion that is sorted." << endl;
+	cout << "                   OR" << endl;
+	cout << "    An explaination for why the number is in the right spot. " << endl << endl;
+
+	cout << "STARTING VECTOR: " << endl;
+	PrintVect(numbers);
+	cout << endl;
+
 	if (step)
 	{
 		vector<bool> tracker;
@@ -92,4 +111,7 @@ void QuickSort(vector<int>& numbers, bool step = false)
 	{
 		QuickSortStartEnd(numbers, 0, numbers.size());
 	}
+
+	cout << "SORTED VECTOR: " << endl;
+	PrintVect(numbers);
 }

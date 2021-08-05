@@ -47,9 +47,9 @@ void PrintTracker(vector<bool> tracker)
 	for (int i = 0; i < tracker.size(); i++)
 	{
 		if (tracker[i])
-			cout << "    ";
-		else
 			cout << "----";
+		else
+			cout << "    ";
 	}
 	cout << endl;
 }
