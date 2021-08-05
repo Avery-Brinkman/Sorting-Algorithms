@@ -7,10 +7,11 @@ Types
 - Bubble https://youtu.be/aXXWXz5rF64 -
 - Selection -
 - Insertion - 
-- Quick https://youtu.be/aXXWXz5rF64
+- Quick https://youtu.be/aXXWXz5rF64 -
 - Merge
 - Heap
 - Radix?
 
 
 https://youtube.com/playlist?list=PL2aHrV9pFqNS79ZKnGLw-RG5gH01bcjRZ
+https://visualgo.net/en/sorting
