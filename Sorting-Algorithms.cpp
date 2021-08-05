@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-    int numOfValues = 10;
+    int numOfValues = 20;
 
     srand(time(NULL));
 
@@ -24,6 +24,6 @@ int main()
         numbers.push_back(rand() % 100 + 1);
     }
 
-    QuickSort(numbers, false);
+    QuickSort(numbers);
  }
 

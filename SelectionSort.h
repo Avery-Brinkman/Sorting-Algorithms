@@ -37,14 +37,14 @@ void SelectionSort(vector<int> &numbers, bool step = true)
 					cout << setw(4 * startIndex) << setfill('-') << '-';
 				cout << setw(4 * ((minIndex - startIndex) + 1)) << setfill(' ') << '*' << setw((4 * (comparsionIndex + 1)) - (4 * (minIndex + 1))) << setfill(' ') << '^' << endl;
 				cout << endl;
- 				_getch();
+ 				(void) _getch();
 			}
 			 
 			if (numbers[comparsionIndex] < numbers[minIndex])
 				minIndex = comparsionIndex;
 		}
 		if (minIndex != startIndex)
-			swap(numbers[startIndex], numbers[minIndex]);
+			MySwap(numbers[startIndex], numbers[minIndex]);
 	}
 
 	cout << "SORTED VECTOR: " << endl;

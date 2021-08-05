@@ -20,12 +20,12 @@ void QuickSortStartEnd(vector<int> &numbers, int startInd, int endInd)
 	{
 		if (numbers[i] < numbers[pivotIndex])
 		{
-			SwapIndVect(numbers, i, storeIndex);
+			MySwap(numbers[i], numbers[storeIndex]);
 			storeIndex++;
 		}
 	}
 
-	SwapIndVect(numbers, pivotIndex, storeIndex - 1);
+	MySwap(numbers[pivotIndex], numbers[storeIndex - 1]);
 
 	QuickSortStartEnd(numbers, pivotIndex, storeIndex - 1);
 	QuickSortStartEnd(numbers, storeIndex, endInd);
@@ -48,7 +48,7 @@ void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vecto
 		PrintTracker(tracker); 
 		cout << endl;
 
- 		_getch();
+ 		(void) _getch();
 		return;
 	}
 
@@ -59,19 +59,19 @@ void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vecto
 	{
 		if (numbers[i] < numbers[pivotIndex])
 		{
- 			SwapIndVect(numbers, i, storeIndex);
+ 			MySwap(numbers[i], numbers[storeIndex]);
 			storeIndex++;
 		}
 	}
 
-	SwapIndVect(numbers, pivotIndex, storeIndex - 1);
+	MySwap(numbers[pivotIndex], numbers[storeIndex - 1]);
 
 	tracker[storeIndex - 1] = true;
 
 	PrintVect(numbers);
 	PrintTracker(tracker);
 	cout << endl;
-	_getch();
+	(void) _getch();
 
 	cout << "Sorted the " << numbers[pivotIndex] << " on the left of " << numbers[storeIndex - 1] << '.' << endl;
 	QuickSortStartEndStep(numbers, pivotIndex, storeIndex - 1, tracker);
@@ -85,9 +85,9 @@ void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vecto
 	QuickSortStartEndStep(numbers, storeIndex, endInd, tracker);
 }
 
-void QuickSort(vector<int>& numbers, bool step = true)
+void QuickSort(vector<int> &numbers, bool step = true)
 {
-	cout << "QUICK SORT" << endl;
+	cout << "QUICK SORT: O(N log(N))" << endl;
 	cout << endl;
 	if (step)
 	{

@@ -10,7 +10,7 @@ using namespace std;
 
 void InsertionSort(vector<int> &numbers, bool step = true)
 {
-	cout << "INSERTION SORT" << endl;
+	cout << "INSERTION SORT: O(N^2)" << endl;
 	cout << endl;
 	if (step)
 	{
@@ -44,9 +44,9 @@ void InsertionSort(vector<int> &numbers, bool step = true)
 				{
 					cout << "Swap!" << endl;
 					cout << endl;
-					_getch();
+					(void) _getch();
 				}
-				SwapIndVect(numbers, currentIndex - 1, currentIndex);
+				MySwap(numbers[currentIndex - 1], numbers[currentIndex]);
 			}
 			else
 			{
@@ -54,7 +54,7 @@ void InsertionSort(vector<int> &numbers, bool step = true)
 				{
 					cout << "Correct position!" << endl;
 					cout << endl;
-					_getch();
+					(void) _getch();
 				}
 				break;
 			}

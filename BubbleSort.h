@@ -10,7 +10,7 @@ using namespace std;
 
 void BubbleSort(vector<int>numbers, bool step = true)
 {
-	cout << "BUBBLE SORT" << endl;
+	cout << "BUBBLE SORT: O(N^2)" << endl;
 	cout << endl;
 	if (step)
 	{
@@ -30,7 +30,6 @@ void BubbleSort(vector<int>numbers, bool step = true)
 		{
 			int leftIndex = i;
 			int rightIndex = i + 1;
-			int tempVal;
 
 			if (step)
 			{
@@ -46,10 +45,10 @@ void BubbleSort(vector<int>numbers, bool step = true)
 			}
 
 			if (numbers[leftIndex] > numbers[rightIndex])
-				SwapIndVect(numbers, leftIndex, rightIndex);
+				MySwap(numbers[leftIndex], numbers[rightIndex]);
 
 			if (step)
-				_getch();
+				(void) _getch();
 		}
 	}
 
