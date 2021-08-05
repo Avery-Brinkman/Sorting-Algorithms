@@ -10,8 +10,8 @@ using namespace std;
 
 void InsertionSort(vector<int> &numbers, bool step = true)
 {
-	cout << "INSERTION SORT" << endl << endl;
-
+	cout << "INSERTION SORT" << endl;
+	cout << endl;
 	if (step)
 	{
 		cout << "KEY:" << endl;
@@ -21,9 +21,9 @@ void InsertionSort(vector<int> &numbers, bool step = true)
 		cout << "    Action that needs to be taken based on the comparison." << endl;
 		cout << endl;
 	}
-
 	cout << "STARTING VECTOR: " << endl;
 	PrintVect(numbers);
+	cout << endl;
 
 	for (int i = 1; i < numbers.size(); i++)
 	{
@@ -33,10 +33,9 @@ void InsertionSort(vector<int> &numbers, bool step = true)
 		{
 			if (step)
 			{
-				cout << endl;
 				PrintVect(numbers);
-				cout << setw(i * 4) << setfill('-') << "-" << endl;
-				cout << setw((currentIndex) * 4) << setfill(' ') << "^" << setw(4) << setfill(' ') << "^" << endl;
+				cout << setw(i * 4) << setfill('-') << '-' << endl;
+				cout << setw((currentIndex) * 4) << setfill(' ') << '^' << "   ^" << endl;
 			}
 
  			if (numbers[currentIndex] < numbers[currentIndex - 1])
@@ -44,6 +43,7 @@ void InsertionSort(vector<int> &numbers, bool step = true)
 				if (step)
 				{
 					cout << "Swap!" << endl;
+					cout << endl;
 					_getch();
 				}
 				SwapIndVect(numbers, currentIndex - 1, currentIndex);
@@ -53,6 +53,7 @@ void InsertionSort(vector<int> &numbers, bool step = true)
 				if (step)
 				{
 					cout << "Correct position!" << endl;
+					cout << endl;
 					_getch();
 				}
 				break;
@@ -61,6 +62,6 @@ void InsertionSort(vector<int> &numbers, bool step = true)
 		}
 	}
 
-	cout << endl << "SORTED VECTOR: " << endl;
+	cout << "SORTED VECTOR: " << endl;
 	PrintVect(numbers);
 }

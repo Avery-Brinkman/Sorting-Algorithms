@@ -24,6 +24,6 @@ int main()
         numbers.push_back(rand() % 100 + 1);
     }
 
-    SelectionSort(numbers);
+    QuickSort(numbers, false);
  }
 

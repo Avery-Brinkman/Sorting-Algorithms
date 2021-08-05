@@ -73,7 +73,7 @@ void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vecto
 	cout << endl;
 	_getch();
 
-	cout << "Sorted the " << numbers[pivotIndex] << " on the left of " << numbers[storeIndex - 1] << "." << endl;
+	cout << "Sorted the " << numbers[pivotIndex] << " on the left of " << numbers[storeIndex - 1] << '.' << endl;
 	QuickSortStartEndStep(numbers, pivotIndex, storeIndex - 1, tracker);
 
 	cout << "Sorted the ";
@@ -81,21 +81,24 @@ void QuickSortStartEndStep(vector<int> &numbers, int startInd, int endInd, vecto
 		cout << numbers[storeIndex - 1];
 	else
 		cout << numbers[storeIndex];
-	cout << " on the right of " << numbers[storeIndex - 1] << "." << endl;
+	cout << " on the right of " << numbers[storeIndex - 1] << '.' << endl;
 	QuickSortStartEndStep(numbers, storeIndex, endInd, tracker);
 }
 
 void QuickSort(vector<int>& numbers, bool step = true)
 {
-	cout << "QUICK SORT" << endl << endl;
-
-	cout << "KEY:" << endl;
-	cout << "    What was just sorted." << endl;
-	cout << "    Current version of the vector." << endl;
-	cout << "    ---- indicator for the portion that is sorted." << endl;
-	cout << "                   OR" << endl;
-	cout << "    An explaination for why the number is in the right spot. " << endl << endl;
-
+	cout << "QUICK SORT" << endl;
+	cout << endl;
+	if (step)
+	{
+		cout << "KEY:" << endl;
+		cout << "    What was just sorted." << endl;
+		cout << "    Current version of the vector." << endl;
+		cout << "    ---- indicator for the portion that is sorted." << endl;
+		cout << "                   OR" << endl;
+		cout << "    An explaination for why the number is in the right spot. " << endl;
+		cout << endl;
+	}
 	cout << "STARTING VECTOR: " << endl;
 	PrintVect(numbers);
 	cout << endl;
